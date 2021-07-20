@@ -39,6 +39,9 @@ class SearchHistoryView: UIView {
                 .bind(to: selectHistory)
                 .disposed(by: disposeBag)
             stackView.addArrangedSubview(button)
+            button.snp.makeConstraints {
+                $0.width.equalToSuperview()
+            }
         }
     }
     
@@ -51,9 +54,7 @@ class SearchHistoryView: UIView {
     private func layout() {
         addSubview(stackView)
         stackView.snp.makeConstraints {
-            $0.top.leading.equalToSuperview().offset(20)
-            $0.trailing.lessThanOrEqualToSuperview().offset(-20)
-            $0.bottom.equalToSuperview().offset(-20)
+            $0.edges.equalToSuperview().inset(20)
         }
     }
 }

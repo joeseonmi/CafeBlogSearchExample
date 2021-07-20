@@ -31,6 +31,7 @@ class SearchViewController: UIViewController {
     fileprivate lazy var filterHeaderView = SearchFilterHeaderView()
     fileprivate lazy var filterView = FilterView()
     fileprivate lazy var historyView = SearchHistoryView()
+    fileprivate lazy var blackBGView = UIView()
     
     private var disposeBag = DisposeBag()
     private var viewModel: SearchViewBindable!
@@ -181,6 +182,8 @@ class SearchViewController: UIViewController {
         let gesture = UITapGestureRecognizer(target: self, action: #selector(tapView(sender:)))
         gesture.cancelsTouchesInView = false
         view.addGestureRecognizer(gesture)
+        blackBGView.backgroundColor = UIColor(white: 0, alpha: 0.2)
+        blackBGView.isHidden = true
     }
     
     @objc
@@ -194,6 +197,7 @@ class SearchViewController: UIViewController {
             searchButton,
             divider,
             tableView,
+            blackBGView,
             filterView,
             historyView,
         ].forEach { view.addSubview($0) }
@@ -225,6 +229,11 @@ class SearchViewController: UIViewController {
         
         filterHeaderView.snp.makeConstraints {
             $0.width.top.leading.trailing.bottom.equalToSuperview()
+        }
+        
+        blackBGView.snp.makeConstraints {
+            $0.top.equalTo(filterHeaderView.snp.bottom)
+            $0.leading.trailing.bottom.equalToSuperview()
         }
         
         filterView.snp.makeConstraints {
@@ -271,12 +280,20 @@ extension Reactive where Base: SearchViewController {
     var showFilter: Binder<Void> {
         return Binder(base) { base, _  in
             base.filterView.isHidden = !base.filterView.isHidden
+            base.blackBGView.isHidden = base.filterView.isHidden
+            if !base.blackBGView.isHidden {
+                base.blackBGView.snp.remakeConstraints {
+                    $0.top.equalTo(base.filterHeaderView.snp.bottom)
+                    $0.leading.trailing.bottom.equalToSuperview()
+                }
+            }
         }
     }
     
     var hideFilter: Binder<Void> {
         return Binder(base) { base, _  in
             base.filterView.isHidden = true
+            base.blackBGView.isHidden = base.filterView.isHidden
         }
     }
     
@@ -290,12 +307,20 @@ extension Reactive where Base: SearchViewController {
             } else {
                 base.historyView.isHidden = true
             }
+            base.blackBGView.isHidden = base.historyView.isHidden
+            if !base.blackBGView.isHidden {
+                base.blackBGView.snp.remakeConstraints {
+                    $0.top.equalTo(base.filterHeaderView.snp.top)
+                    $0.leading.trailing.bottom.equalToSuperview()
+                }
+            }
         }
     }
     
     var hideHistories: Binder<Void> {
         return Binder(base) { base, _  in
             base.historyView.isHidden = true
+            base.blackBGView.isHidden = base.historyView.isHidden
         }
     }
 }

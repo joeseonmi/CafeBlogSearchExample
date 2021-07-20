@@ -40,9 +40,15 @@ class PostSearchResultCell: UITableViewCell {
         postTypeLabel.text = post.type == .blog ? "BLOG" : "CAFE"
         siteNameLabel.text = post.type == .blog ? post.blogName : post.cafeName
       
-        if let date = post.datetime,
-           let dateText = date.toString(format: "yyyy년 MM월 dd일") {
-            dateLabel.text = dateText
+        let calendar = Calendar(identifier: .gregorian)
+        if let date = post.datetime {
+            if calendar.isDateInToday(date) {
+                dateLabel.text = "오늘"
+            } else if calendar.isDateInYesterday(date) {
+                dateLabel.text = "어제"
+            } else if let dateText = date.toString(format: "yyyy년 MM월 dd일") {
+                dateLabel.text = dateText
+            }
         }
         
         if post.thumbnailURL.isEmpty {

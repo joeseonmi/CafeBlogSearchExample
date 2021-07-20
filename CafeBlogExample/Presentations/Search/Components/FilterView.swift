@@ -70,6 +70,9 @@ class FilterView: UIView {
         filters.forEach { filter in
             if let button = self.filterButtons[filter] {
                 self.stackView.addArrangedSubview(button)
+                button.snp.makeConstraints {
+                    $0.width.equalToSuperview()
+                }
             }
         }
     }
@@ -78,6 +81,7 @@ class FilterView: UIView {
         backgroundColor = .white
         stackView.axis = .vertical
         stackView.spacing = 5
+
         filters = [.blog, .cafe]
         setFilterButton()
         drawFilter()
@@ -87,9 +91,7 @@ class FilterView: UIView {
         addSubview(stackView)
         
         stackView.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(10)
-            $0.bottom.equalToSuperview().offset(-10)
-            $0.centerX.equalToSuperview()
+            $0.edges.equalToSuperview().inset(10)
         }
     }
 

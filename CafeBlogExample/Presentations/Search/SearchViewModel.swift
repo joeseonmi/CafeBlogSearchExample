@@ -25,6 +25,8 @@ class SearchViewModel: SearchViewBindable {
     private var searchedBlogPosts = BehaviorSubject<[Post]>(value: [])
     private var searchedCafePosts = BehaviorSubject<[Post]>(value: [])
     private var cellData = BehaviorSubject<[SearchResultCellData]>(value: [])
+    private var cafeLastPage = PublishSubject<Bool>()
+    private var blogLastPage = PublishSubject<Bool>()
     
     init(model: SearchModel = SearchModel()) {
         
@@ -46,10 +48,14 @@ class SearchViewModel: SearchViewBindable {
                 cellData
             )
             .map(model.needMoreFetch)
-            
         
         let moreCafeResult = needMoreFetch
             .filter { $0 == true }
+            .withLatestFrom(cafeLastPage)
+            .filter { $0 == false }
+            .do(onNext: { _ in
+                cafePage += 1
+            })
             .withLatestFrom(didTapSearch)
             .map { (keyword: $0, page: cafePage) }
             .flatMapLatest(model.getCafePosts)
@@ -60,21 +66,24 @@ class SearchViewModel: SearchViewBindable {
                 searchCafeResult,
                 moreCafeResult
             )
-            .map { result -> [Post]? in
+            .map { result -> PostResponse? in
                 guard case .success(let value) = result else { return nil }
-                if !value.meta.isEnd {
-                    cafePage += 1
-                }
-                return value.documents
+                return value
             }.compactMap { $0 }
+        
+        cafeSuccess
+            .map { $0.meta.isEnd }
+            .bind(to: cafeLastPage)
+            .disposed(by: disposeBag)
        
         cafeSuccess
+            .map { $0.documents }
             .bind(to: searchedCafePosts)
             .disposed(by: disposeBag)
-            
+        
         
         //1. 마지막셀일때
-        //2. 페이징
+        //2. 페이징 -> 마지막 페이지일때 어떻게 처리할지
         //3. 키워드 + 페이지 해서 moreFetch 하고
         //4. 리턴
         
@@ -89,6 +98,11 @@ class SearchViewModel: SearchViewBindable {
             
         let moreBlogResult = needMoreFetch
             .filter { $0 == true }
+            .withLatestFrom(blogLastPage)
+            .filter { $0 == false }
+            .do(onNext: { _ in
+                blogPage += 1
+            })
             .withLatestFrom(didTapSearch)
             .map { (keyword: $0, page: cafePage) }
             .flatMapLatest(model.getBlogPosts)
@@ -99,18 +113,35 @@ class SearchViewModel: SearchViewBindable {
                 searchBlogResult,
                 moreBlogResult
             )
-            .map { result -> [Post]? in
+            .map { result -> PostResponse? in
                 guard case .success(let value) = result else { return nil }
-                if !value.meta.isEnd {
-                    blogPage += 1
-                }
-                return value.documents
+                return value
             }.compactMap { $0 }
+        
+        blogSuccess
+            .map { $0.meta.isEnd }
+            .bind(to: blogLastPage)
+            .disposed(by: disposeBag)
        
         blogSuccess
+            .map { $0.documents }
             .bind(to: searchedBlogPosts)
             .disposed(by: disposeBag)
-    
+      
+        
+        //LAST PAGE
+        let lastPage = Observable
+            .combineLatest(cafeLastPage, blogLastPage)
+        
+        let lastPageMessage = needMoreFetch
+            .filter { $0 == true }
+            .withLatestFrom(lastPage)
+            .filter { $0.0 == true && $0.1 == true }
+            .map { _ -> String in
+                return "마지막 페이지 입니다"
+            }
+        
+        //View로 보낼 List 정리
         let result = Observable
             .merge(
                 searchedBlogPosts,
@@ -140,6 +171,7 @@ class SearchViewModel: SearchViewBindable {
         searchList = cellData
             .asDriver(onErrorDriveWith: .empty())
         
+        //View에서 EndEditing이 되어야 할 때
         viewEndEditing = Observable
             .merge(
                 didScroll,
@@ -149,10 +181,11 @@ class SearchViewModel: SearchViewBindable {
             )
             .asSignal(onErrorSignalWith: .empty())
         
+        //검색 결과 없을 때
         let empty = Observable
             .combineLatest(
-                cafeSuccess,
-                blogSuccess
+                cafeSuccess.map { $0.documents },
+                blogSuccess.map { $0.documents }
             )
             .map { cafe, blog -> String? in
                 if (cafe + blog).count == 0 {
@@ -184,7 +217,12 @@ class SearchViewModel: SearchViewBindable {
                 return error.message
             }.compactMap { $0 }
         
-        errorMessage = Observable.merge(errors, empty)
+        errorMessage = Observable
+            .merge(
+                errors,
+                empty,
+                lastPageMessage
+            )
             .asSignal(onErrorSignalWith: .empty())
         
     }

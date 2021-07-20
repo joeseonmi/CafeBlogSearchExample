@@ -52,7 +52,6 @@ class SearchAPIService {
                        parameters: parameters,
                        headers: self.header)
                 .responseJSON { response in
-                    print("호잉", String(data: response.data!, encoding: .utf8))
                     switch response.result {
                     case .success:
                         guard let data = response.data else { return }

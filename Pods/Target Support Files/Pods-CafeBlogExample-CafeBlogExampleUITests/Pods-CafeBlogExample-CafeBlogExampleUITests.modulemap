@@ -1,6 +1,0 @@
-framework module Pods_CafeBlogExample_CafeBlogExampleUITests {
-  umbrella header "Pods-CafeBlogExample-CafeBlogExampleUITests-umbrella.h"
-
-  export *
-  module * { export * }
-}

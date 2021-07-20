@@ -4,6 +4,7 @@
 target 'CafeBlogExample' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
+	# Pods for CafeBlogExample
 
 	pod 'RxSwift', '6.2.0'
 	pod 'RxCocoa', '6.2.0'
@@ -12,19 +13,13 @@ target 'CafeBlogExample' do
 	pod 'SnapKit', '~> 5.0.0'
 	pod 'Kingfisher', '~> 6.0'
 
-  # Pods for CafeBlogExample
-
   target 'CafeBlogExampleTests' do
     inherit! :search_paths
+    
+    pod 'Quick'
+    pod 'Nimble'
     # Pods for testing
 
-	pod 'Quick'
-	pod 'Nimble'
-
-  end
-
-  target 'CafeBlogExampleUITests' do
-    # Pods for testing
   end
 
 end

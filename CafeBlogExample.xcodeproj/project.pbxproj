@@ -19,7 +19,6 @@
 		265A132326A1A8A3007C1336 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265A132226A1A8A3007C1336 /* AppDelegate.swift */; };
 		265A132C26A1A8A6007C1336 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 265A132B26A1A8A6007C1336 /* Assets.xcassets */; };
 		265A132F26A1A8A6007C1336 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 265A132D26A1A8A6007C1336 /* LaunchScreen.storyboard */; };
-		265A133A26A1A8A7007C1336 /* CafeBlogExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265A133926A1A8A7007C1336 /* CafeBlogExampleTests.swift */; };
 		265A134526A1A8A7007C1336 /* CafeBlogExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265A134426A1A8A7007C1336 /* CafeBlogExampleUITests.swift */; };
 		265B7D7E26A55048004E45CF /* MoveToURLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265B7D7D26A55047004E45CF /* MoveToURLManager.swift */; };
 		265B7D8026A59C30004E45CF /* SearchViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265B7D7F26A59C30004E45CF /* SearchViewTests.swift */; };
@@ -31,6 +30,9 @@
 		268D488726A1B58100091EB3 /* PostSearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268D488626A1B58100091EB3 /* PostSearchResultCell.swift */; };
 		268D488926A1B60200091EB3 /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268D488826A1B60200091EB3 /* UILabelExtension.swift */; };
 		268D488B26A1B64200091EB3 /* FontWeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268D488A26A1B64200091EB3 /* FontWeight.swift */; };
+		26B5C47026A5B5780098F143 /* CafeResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B5C46F26A5B5780098F143 /* CafeResult.swift */; };
+		26B5C47226A5DC820098F143 /* BlogResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B5C47126A5DC820098F143 /* BlogResult.swift */; };
+		26B5C47426A5E3DF0098F143 /* CellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B5C47326A5E3DF0098F143 /* CellData.swift */; };
 		26ECB64C26A1BAE6003071A1 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26ECB64B26A1BAE6003071A1 /* UIButtonExtension.swift */; };
 		26ECB64E26A1BED6003071A1 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26ECB64D26A1BED6003071A1 /* Colors.swift */; };
 		26ECB65026A1C542003071A1 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26ECB64F26A1C542003071A1 /* DateExtension.swift */; };
@@ -41,7 +43,6 @@
 		26ECB65B26A1D4C5003071A1 /* Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26ECB65A26A1D4C5003071A1 /* Meta.swift */; };
 		26ECB65D26A1D5A2003071A1 /* PostResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26ECB65C26A1D5A2003071A1 /* PostResponse.swift */; };
 		39C1AFB0E1339E79619E4DD3 /* Pods_CafeBlogExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70AE23C5358B30FF82BCD525 /* Pods_CafeBlogExample.framework */; };
-		49252ADD9429C5D2FAA5764C /* Pods_CafeBlogExample_CafeBlogExampleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 144E6D3B585F527EBA483184 /* Pods_CafeBlogExample_CafeBlogExampleUITests.framework */; };
 		F65A8D68E90D613C9184401B /* Pods_CafeBlogExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1319D996EA64AC8B815698B6 /* Pods_CafeBlogExampleTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,7 +66,6 @@
 /* Begin PBXFileReference section */
 		04F2D7EE2C8C494FFB98DD97 /* Pods-CafeBlogExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CafeBlogExampleTests.release.xcconfig"; path = "Target Support Files/Pods-CafeBlogExampleTests/Pods-CafeBlogExampleTests.release.xcconfig"; sourceTree = "<group>"; };
 		1319D996EA64AC8B815698B6 /* Pods_CafeBlogExampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CafeBlogExampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		144E6D3B585F527EBA483184 /* Pods_CafeBlogExample_CafeBlogExampleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CafeBlogExample_CafeBlogExampleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		261E850326A28A16004608CF /* SortType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortType.swift; sourceTree = "<group>"; };
 		261E850526A2A543004608CF /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
 		261E850826A3F1AC004608CF /* PostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
@@ -81,7 +81,6 @@
 		265A132E26A1A8A6007C1336 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		265A133026A1A8A6007C1336 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		265A133526A1A8A7007C1336 /* CafeBlogExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CafeBlogExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		265A133926A1A8A7007C1336 /* CafeBlogExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeBlogExampleTests.swift; sourceTree = "<group>"; };
 		265A133B26A1A8A7007C1336 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		265A134026A1A8A7007C1336 /* CafeBlogExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CafeBlogExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		265A134426A1A8A7007C1336 /* CafeBlogExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeBlogExampleUITests.swift; sourceTree = "<group>"; };
@@ -96,6 +95,9 @@
 		268D488626A1B58100091EB3 /* PostSearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSearchResultCell.swift; sourceTree = "<group>"; };
 		268D488826A1B60200091EB3 /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
 		268D488A26A1B64200091EB3 /* FontWeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontWeight.swift; sourceTree = "<group>"; };
+		26B5C46F26A5B5780098F143 /* CafeResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeResult.swift; sourceTree = "<group>"; };
+		26B5C47126A5DC820098F143 /* BlogResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogResult.swift; sourceTree = "<group>"; };
+		26B5C47326A5E3DF0098F143 /* CellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellData.swift; sourceTree = "<group>"; };
 		26ECB64B26A1BAE6003071A1 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		26ECB64D26A1BED6003071A1 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		26ECB64F26A1C542003071A1 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
@@ -109,8 +111,6 @@
 		30616C18AEEAB216B1BC5762 /* Pods-CafeBlogExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CafeBlogExampleTests.debug.xcconfig"; path = "Target Support Files/Pods-CafeBlogExampleTests/Pods-CafeBlogExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		70AE23C5358B30FF82BCD525 /* Pods_CafeBlogExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CafeBlogExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA63D838D345EB2C76062A8D /* Pods-CafeBlogExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CafeBlogExample.release.xcconfig"; path = "Target Support Files/Pods-CafeBlogExample/Pods-CafeBlogExample.release.xcconfig"; sourceTree = "<group>"; };
-		B9C0C2D880A9D4B442970A37 /* Pods-CafeBlogExample-CafeBlogExampleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CafeBlogExample-CafeBlogExampleUITests.release.xcconfig"; path = "Target Support Files/Pods-CafeBlogExample-CafeBlogExampleUITests/Pods-CafeBlogExample-CafeBlogExampleUITests.release.xcconfig"; sourceTree = "<group>"; };
-		D3CB1D96D0143F7059787F9C /* Pods-CafeBlogExample-CafeBlogExampleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CafeBlogExample-CafeBlogExampleUITests.debug.xcconfig"; path = "Target Support Files/Pods-CafeBlogExample-CafeBlogExampleUITests/Pods-CafeBlogExample-CafeBlogExampleUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,7 +134,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49252ADD9429C5D2FAA5764C /* Pods_CafeBlogExample_CafeBlogExampleUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,10 +196,10 @@
 				265A132B26A1A8A6007C1336 /* Assets.xcassets */,
 				265A132D26A1A8A6007C1336 /* LaunchScreen.storyboard */,
 				265A133026A1A8A6007C1336 /* Info.plist */,
-				261E851326A435E0004608CF /* Utility */,
 				268D487426A1AC1A00091EB3 /* Network */,
 				268D487526A1AC2100091EB3 /* Entities */,
 				268D487726A1AC3F00091EB3 /* Presentations */,
+				261E851326A435E0004608CF /* Utility */,
 				268D487626A1AC3200091EB3 /* Custom */,
 			);
 			path = CafeBlogExample;
@@ -209,7 +208,7 @@
 		265A133826A1A8A7007C1336 /* CafeBlogExampleTests */ = {
 			isa = PBXGroup;
 			children = (
-				265A133926A1A8A7007C1336 /* CafeBlogExampleTests.swift */,
+				26B5C46E26A5B5620098F143 /* DummyData */,
 				265B7D7F26A59C30004E45CF /* SearchViewTests.swift */,
 				265A133B26A1A8A7007C1336 /* Info.plist */,
 			);
@@ -292,13 +291,21 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		26B5C46E26A5B5620098F143 /* DummyData */ = {
+			isa = PBXGroup;
+			children = (
+				26B5C46F26A5B5780098F143 /* CafeResult.swift */,
+				26B5C47126A5DC820098F143 /* BlogResult.swift */,
+				26B5C47326A5E3DF0098F143 /* CellData.swift */,
+			);
+			path = DummyData;
+			sourceTree = "<group>";
+		};
 		8B3002416AADD4E92078D0CF /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				2BDF87C1C7D80DD65F08EE81 /* Pods-CafeBlogExample.debug.xcconfig */,
 				AA63D838D345EB2C76062A8D /* Pods-CafeBlogExample.release.xcconfig */,
-				D3CB1D96D0143F7059787F9C /* Pods-CafeBlogExample-CafeBlogExampleUITests.debug.xcconfig */,
-				B9C0C2D880A9D4B442970A37 /* Pods-CafeBlogExample-CafeBlogExampleUITests.release.xcconfig */,
 				30616C18AEEAB216B1BC5762 /* Pods-CafeBlogExampleTests.debug.xcconfig */,
 				04F2D7EE2C8C494FFB98DD97 /* Pods-CafeBlogExampleTests.release.xcconfig */,
 			);
@@ -309,7 +316,6 @@
 			isa = PBXGroup;
 			children = (
 				70AE23C5358B30FF82BCD525 /* Pods_CafeBlogExample.framework */,
-				144E6D3B585F527EBA483184 /* Pods_CafeBlogExample_CafeBlogExampleUITests.framework */,
 				1319D996EA64AC8B815698B6 /* Pods_CafeBlogExampleTests.framework */,
 			);
 			name = Frameworks;
@@ -345,7 +351,7 @@
 				265A133126A1A8A7007C1336 /* Sources */,
 				265A133226A1A8A7007C1336 /* Frameworks */,
 				265A133326A1A8A7007C1336 /* Resources */,
-				A77FF5ED2C817E96D5F00759 /* [CP] Embed Pods Frameworks */,
+				36B6C08683B0F224495A0731 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -361,11 +367,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 265A134F26A1A8A7007C1336 /* Build configuration list for PBXNativeTarget "CafeBlogExampleUITests" */;
 			buildPhases = (
-				2B92A84A1B308B5E86D2746E /* [CP] Check Pods Manifest.lock */,
 				265A133C26A1A8A7007C1336 /* Sources */,
 				265A133D26A1A8A7007C1336 /* Frameworks */,
 				265A133E26A1A8A7007C1336 /* Resources */,
-				B5BE762123DD2971054EF84B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -446,29 +450,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2B92A84A1B308B5E86D2746E /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-CafeBlogExample-CafeBlogExampleUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A77FF5ED2C817E96D5F00759 /* [CP] Embed Pods Frameworks */ = {
+		36B6C08683B0F224495A0731 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -505,23 +487,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B5BE762123DD2971054EF84B /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CafeBlogExample-CafeBlogExampleUITests/Pods-CafeBlogExample-CafeBlogExampleUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CafeBlogExample-CafeBlogExampleUITests/Pods-CafeBlogExample-CafeBlogExampleUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CafeBlogExample-CafeBlogExampleUITests/Pods-CafeBlogExample-CafeBlogExampleUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D403E22ED82C9F2AEA662E4A /* [CP] Embed Pods Frameworks */ = {
@@ -605,8 +570,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26B5C47026A5B5780098F143 /* CafeResult.swift in Sources */,
 				265B7D8026A59C30004E45CF /* SearchViewTests.swift in Sources */,
-				265A133A26A1A8A7007C1336 /* CafeBlogExampleTests.swift in Sources */,
+				26B5C47226A5DC820098F143 /* BlogResult.swift in Sources */,
+				26B5C47426A5E3DF0098F143 /* CellData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -682,6 +649,10 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -743,6 +714,11 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)",
+				);
+				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -805,10 +781,24 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 30616C18AEEAB216B1BC5762 /* Pods-CafeBlogExampleTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9H3R65PNVV;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(PLATFORM_DIR)/Developer/Library/Frameworks\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Alamofire\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Kingfisher\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Nimble\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Quick\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RxAppState\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RxCocoa\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RxRelay\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RxSwift\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SnapKit\"",
+					"$(SRCROOT)",
+				);
 				INFOPLIST_FILE = CafeBlogExampleTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -828,10 +818,24 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 04F2D7EE2C8C494FFB98DD97 /* Pods-CafeBlogExampleTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9H3R65PNVV;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(PLATFORM_DIR)/Developer/Library/Frameworks\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Alamofire\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Kingfisher\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Nimble\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Quick\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RxAppState\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RxCocoa\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RxRelay\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RxSwift\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SnapKit\"",
+					"$(SRCROOT)",
+				);
 				INFOPLIST_FILE = CafeBlogExampleTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -849,7 +853,6 @@
 		};
 		265A135026A1A8A7007C1336 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D3CB1D96D0143F7059787F9C /* Pods-CafeBlogExample-CafeBlogExampleUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -870,7 +873,6 @@
 		};
 		265A135126A1A8A7007C1336 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B9C0C2D880A9D4B442970A37 /* Pods-CafeBlogExample-CafeBlogExampleUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

@@ -43,3 +43,23 @@ struct Post: Codable {
         
     }
 }
+
+extension Post {
+    init(
+        title: String,
+        contents: String,
+        url: String,
+        blogName: String?,
+        cafeName: String?,
+        thumbnailURL: String,
+        datetime: Date
+    ) {
+        self.title = title
+        self.contents = contents
+        self.url = url
+        self.blogName = blogName
+        self.cafeName = cafeName
+        self.thumbnailURL = thumbnailURL
+        self.datetime = datetime
+    }
+}
